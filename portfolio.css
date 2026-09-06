@@ -21,6 +21,10 @@
 }
 
 
+html, body{
+    padding: 0;
+    margin: 0;
+}
 
 main{
     display: grid !important;
@@ -34,7 +38,9 @@ main{
   padding: 5px;
   font-family: "DSFont";
   font-size: 2em;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -42,6 +48,10 @@ aside{
     grid-area: menu;
     text-align: center;  
     padding: 1em;
+    position: sticky;
+    top:0;
+    align-self: start;
+
 }
 
 .category{
@@ -62,6 +72,8 @@ section{
     flex-wrap: wrap;
     flex-direction: row;
     align-items:flex-start;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -80,11 +92,13 @@ nav{
 
 section img{
     margin: .25em;
+    max-width: 50vh;
+    max-height: 50vw;
 }
 
 
 section img:hover{
-    filter:saturate(50%);
+    filter:saturate(30%);
     transition: all .4s
 }
 
@@ -120,7 +134,3 @@ section img:hover{
   transform: translateY(0);
 }
 
-
-.project{
-    height: 4%;
-}

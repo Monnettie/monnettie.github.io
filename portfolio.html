@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js"></script>
+
+</head> 
+    <body>
+        <main> 
+            <aside>
+                <div>
+                   <img src = "test.jpg" width="100px" height="100px"> <br>
+                    <nav>
+                        <a href="index.html">home</a> <br>
+                        <a href="">about</a><br>
+                    </nav>
+                </div>
+                <div class="gap"></div>
+                <div class="categories">
+                        <p> categories</p>
+                        <button onclick="displayAll()">all</button> <br>
+                        <button onclick="filterBy('art')">art</button> <br>
+                        <button onclick="filterBy('games')">games</button><br>
+                        <button onclick="filterBy('3d')">3d</button>
+                </div>
+            </aside>
+            <section>
+                <img src = "test.jpg" class=" art games 3d project"  onclick="showImage('image1')">
+                <img src = "test.jpg" class=" art project" onclick="showImage('image2')">
+                <img src = "test.jpg" class=" 3d art project" onclick="showImage('image3')">
+            </section>
+        </main>
+
+        <div class="thing1" id="image1">
+            <button onclick="closeWindow('image1')">close</button> <br> <br>
+            <img src = "test.jpg" class="responsive" >
+            <figcaption> this describes the image : art, games, 3d</figcaption>
+        </div>   
+
+        <div class="thing1" id="image2">
+            <button onclick="closeWindow('image2')">close</button> <br> <br>
+            <img src = "test.jpg" class="responsive" >
+            <figcaption> this describes the image : art</figcaption>
+         </div>  
+
+
+        <div class="thing1" id="image3">
+            <button onclick="closeWindow('image3')">close</button> <br> <br>
+            <img src = "test.jpg" class="responsive" >
+            <figcaption> this describes the image: 3d art </figcaption>
+        </div>  
+
+    </body>
+
+</html>

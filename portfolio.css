@@ -1,0 +1,126 @@
+
+:root {
+    --fontColor: rgb(61, 11, 53);
+    --bgColor: #fff5fdc9;
+    --borderColor: rgb(61, 11, 40);
+    --dropShadow: 0, 0, 0;
+    --linkColor: rgb(252, 119, 250);
+    --linkHover: rgb(201, 51, 191);
+    --navColor: rgb(255, 245, 252);
+    --hrColor: rgb(255, 176, 244);
+    --headColor: rgb(255, 245, 246);
+}
+
+
+@font-face {
+    font-family: "DSFont";
+    src: url("assets/Nintendo-DS-BIOS.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+main{
+    display: grid !important;
+  grid-template-areas:
+    "menu content"
+    "menu content"
+    "menu content";
+  grid-template-columns: .75fr 3fr;
+  gap: 3px;
+  background-color: orange;
+  padding: 5px;
+  font-family: "DSFont";
+  font-size: 2em;
+  height: 100vh;
+}
+
+
+aside{
+    grid-area: menu;
+    text-align: center;  
+    padding: 1em;
+}
+
+.category{
+  grid-area: menu;
+  background-color: red;
+  text-align: center;  
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+}
+
+section{
+    grid-area: content;
+    background-color: aqua;
+    padding: .25em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items:flex-start;
+}
+
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+nav{
+    margin:auto;
+}
+
+.gap{
+    height: 15vh;
+}
+
+section img{
+    margin: .25em;
+}
+
+
+section img:hover{
+    filter:saturate(50%);
+    transition: all .4s
+}
+
+.thing1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    text-align: center;  
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: red;
+    z-index: 999;
+    transform: translateY(100%); 
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+#image1.active {
+  transform: translateY(0);
+}
+
+#image2.active {
+  transform: translateY(0);
+}
+
+#image3.active {
+  transform: translateY(0);
+}
+
+
+.project{
+    height: 4%;
+}

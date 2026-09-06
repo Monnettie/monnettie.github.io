@@ -55,7 +55,6 @@ aside{
 }
 
 .category{
-  grid-area: menu;
   background-color: red;
   text-align: center;  
   align-items: center;
@@ -68,12 +67,15 @@ section{
     grid-area: content;
     background-color: aqua;
     padding: .25em;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items:flex-start;
+    align-items:flex-start;*/
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
+    column-count: 3;      
+    column-gap: .1em;
+    width: 100%;   
 }
 
 

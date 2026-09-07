@@ -43,21 +43,27 @@ function clicksplode() { if (document.getElementById) {
   set_width();
   set_scroll();
   for (i=0; i<bangs; i++) for (j=sparks*i; j<sparks+sparks*i; j++) {
-    stars[j]=createDiv('❤︎⁠', 15);
+    
+    stars[j]=createDiv('assets/True.webp', 20);
     document.body.appendChild(stars[j]);
   }
 }}
 
-function createDiv(char, size) {
+function createDiv(filepath, size) {
   var div, sty;
   div=document.createElement('div');
   sty=div.style;
-  sty.font=size+'px monospace';
-  sty.position='absolute';
-  sty.backgroundColor='transparent';
-  sty.visibility='hidden';
-  sty.zIndex='101';
-  div.appendChild(document.createTextNode(char));
+  
+  sty.position="absolute";
+  sty.zIndex="1000";
+  sty.visibility="hidden";
+  
+  var elem = document.createElement("img");
+  elem.setAttribute("src", filepath);
+  elem.setAttribute("height", size);
+  elem.setAttribute("width", size);
+  elem.setAttribute("alt", "Sparkle");
+  div.appendChild(elem);
   return (div);
 }
 
@@ -73,7 +79,8 @@ function bang(N) {
         Z.left=Xpos[i]+'px';
         Z.top=Ypos[i]+'px';
 	  }
-      if (decay[i]==15) Z.fontSize='7px';
+    
+    if (decay[i]==15) Z.fontSize='7px';
       else if (decay[i]==7) Z.fontSize='2px';
       else if (decay[i]==1) Z.visibility='hidden';
 	  decay[i]--;

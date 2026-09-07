@@ -13,49 +13,49 @@
     <body>
         <main> 
             <aside>
-                <div>
-                   <img src = "test.jpg" width="100px" height="100px"> <br>
-                    <nav>
-                        <a href="index.html">home</a> <br>
-                        <a href="">about</a><br>
-                    </nav>
-                </div>
-                <div class="gap"></div>
-                <div class="categories">
-                        <p> categories</p>
-                        <button onclick="displayAll()">featured</button> <br>
-                        <button onclick="filterBy('motion_graphics')">motion graphics</button> <br>
-                        <button onclick="filterBy('illustration')">illustration</button><br>
-                        <button onclick="filterBy('design')">design</button>
+                   
+                        <a href="index.html">home</a> 
+                        <a href="">about</a>
+                        <button onclick="displayAll()">featured</button> 
+                        <button onclick="filterBy('motion_graphics')">motion graphics</button> 
+                        <button onclick="filterBy('illustration')">illustration</button>
+                        <button onclick="filterBy('design')">design</button> 
                         <button onclick="filterBy('games')">games</button>
-                </div>
             </aside>
             <section>
-                <img src = "assets/portfolio_images/dokoneko.png" class="games projects" onclick="showImage('image1')">
-                <img src = "assets/portfolio_images/lovebullet.png" class="motion_graphics projects" onclick="showImage('image3')">
-                <img src = "assets/portfolio_images/sue.png" class="design projects" onclick="showImage('image2')">
+                <img src = "assets/portfolio_images/dokoneko.png" class="games project responsive" onclick="showImage('image1')">
+                <img src = "assets/portfolio_images/sue.png" class="design project responsive" onclick="showImage('image2')">
+                <img src = "assets/portfolio_images/lovebullet.png" class="motion_graphics project responsive" onclick="showImage('image3')">
+                <img src = "assets/portfolio_images/dnd.jpg" class="illustration responsive project" onclick="showImage('image4')">
             </section>
         </main>
 
         <div class="thing1" id="image1">
             <button onclick="closeWindow('image1')">close</button> <br> <br>
-            <img src = "test.jpg" class="responsive" >
+            <img src = "assets/portfolio_images/dokoneko.png" class="featured responsive" >
             <figcaption> this describes the image : art, games, 3d</figcaption>
         </div>   
 
         <div class="thing1" id="image2">
             <button onclick="closeWindow('image2')">close</button> <br> <br>
-            <img src = "test2.jpg" class="responsive" >
+            <img src = "assets/portfolio_images/sue.png" class=" featured responsive" >
             <figcaption> this describes the image : art</figcaption>
          </div>  
 
-
         <div class="thing1" id="image3">
             <button onclick="closeWindow('image3')">close</button> <br> <br>
-            <img src = "test4.gif" class="responsive" >
+            <img src = "assets/portfolio_images/lovebullet.png" class=" featured responsive" >
+            <figcaption> this describes the image: 3d art </figcaption>
+        </div>  
+
+        <div>
+            <div class="thing1" id="image4">
+            <button onclick="closeWindow('image4')">close</button> <br> <br>
+            <img src = "assets/portfolio_images/dnd.jpg" class=" featured responsive" >
             <figcaption> this describes the image: 3d art </figcaption>
         </div>  
 
     </body>
-
+    
+    <script src="script.js"></script>
 </html>

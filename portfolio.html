@@ -13,14 +13,19 @@
     <body>
         <main> 
             <aside>
-                   
-                        <a href="index.html"> <img src="assets/ui/home_default.png" class="navbutton"></a> 
-                        <a href=""> <img src="assets/ui/about_default.png" class="navbutton"></a>
+                        <div class="links">
+                        <a href="index.html"> <img src="assets/ui/home_default.png" class="navbutton index"></a> 
+                        <a href=""> <img src="assets/ui/about_default.png" class="navbutton about"></a>
+                        <a href="portfolio.html"> <img src="assets/ui/portfolio_default.png" class="navbutton portfolio"></a> 
+                        <a href=""> <img src="assets/ui/resume_default.png" class="navbutton resume"></a>
+                        </div>
+                        <div class="categories">
                         <button onclick="displayAll()">featured</button> 
                         <button onclick="filterBy('motion_graphics')">motion graphics</button> 
                         <button onclick="filterBy('illustration')">illustration</button>
                         <button onclick="filterBy('design')">design</button> 
                         <button onclick="filterBy('games')">games</button>
+                        </div>
             </aside>
             <section>
                 <img src = "assets/portfolio_images/dokoneko.png" class="games project" onclick="showImage('image1')">
@@ -48,13 +53,11 @@
             <figcaption> this describes the image: 3d art </figcaption>
         </div>  
 
-        <div>
             <div class="thing1" id="image4">
             <button onclick="closeWindow('image4')">close</button> <br> <br>
             <img src = "assets/portfolio_images/dnd.jpg" class=" featured responsive" >
             <figcaption> this describes the image: 3d art </figcaption>
         </div>  
-
     </body>
     
     <script src="script.js"></script>

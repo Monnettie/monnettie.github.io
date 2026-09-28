@@ -232,6 +232,10 @@ section img:hover {
         brightness(1.1);
 }
 
+#image:hover{
+
+}
+
 .thing1 {
     position: fixed;
     top: 0;
@@ -249,11 +253,13 @@ section img:hover {
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     border-radius: 5rem 5rem 0 0;
     font-family: 'madoumfg';
+    overflow-y: scroll !important;
 }
 
 .thing1 h1{
         text-align:left;
         color:#621f35;
+        margin-left: 1em;
 }
 
 .thing1 button {
@@ -268,6 +274,8 @@ section img:hover {
     transition: color .3s ease;
     font-family: 'Pixelta';
     padding: .5em;
+    margin-top: .5rem;
+    
 
 
 }
@@ -297,7 +305,7 @@ section img:hover {
 #image4.active,
 #image5.active,
 #image6.active,
-#image7active,
+#image7.active,
 #image8.active,
 #image9.active,
 #image10.active,
@@ -476,3 +484,16 @@ footer .star {
     
 
 }
+
+
+ #wrap { width: 500px; height: 700px; margin: auto;}
+    #frame { width: 500px; height: 700px; border: none; }
+    #frame {
+        -ms-zoom: 0.80;
+        -moz-transform: scale(0.80);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.80);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.80);
+        -webkit-transform-origin: 0 0;
+    }

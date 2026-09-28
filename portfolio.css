@@ -221,11 +221,15 @@ section img {
     cursor: pointer;
     margin-bottom: 15px;
     break-inside: avoid;
+    transition: filter .35s ease;
 }
 
 section img:hover {
-    filter: saturate(30%);
-    transition: filter .4s;
+    filter:
+        sepia(1)
+        saturate(1.5)
+        hue-rotate(45deg)
+        brightness(1.1);
 }
 
 .thing1 {
@@ -239,14 +243,47 @@ section img:hover {
     align-items: center;
     justify-content: center;
     z-index: 999;
+    color:#F8A2BF;
     background-color:  #fff5f8;
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     border-radius: 5rem 5rem 0 0;
+    font-family: 'madoumfg';
+}
+
+.thing1 h1{
+        text-align:left;
+        color:#621f35;
 }
 
 .thing1 button {
-    font-size: .5rem;
+    border: solid 1px #F8A2BF;
+    border-radius:3px;
+    background: none;
+    color: #F8A2BF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: color .3s ease;
+    font-family: 'Pixelta';
+    padding: .5em;
+
+
+}
+
+.thing1 button:hover {
+    color: #621f35;
+    border: solid 1px #621f35;
+    text-decoration: #621f35 solid 1px;
+
+}
+
+.thing1 button:active {
+    color: #0c0004;
+    border: solid 1px #0c0004;
+    text-decoration: #0c0004 solid 1px;
+
 }
 
 .featured {
@@ -317,6 +354,8 @@ footer .star {
     .categories > img {
         width: 150px;
     }
+
+    
 
     section {
         column-count: 3;

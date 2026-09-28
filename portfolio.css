@@ -275,10 +275,11 @@ section img:hover {
     font-family: 'Pixelta';
     padding: .5em;
     margin-top: .5rem;
-    
-
 
 }
+
+.thing1 a{  color: #621f35;
+ text-decoration: #621f35 solid 1px;}
 
 .thing1 button:hover {
     color: #621f35;

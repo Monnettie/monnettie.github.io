@@ -67,9 +67,6 @@ export class GameController {
             console.log('Key pressed on title screen:', keyCode);
             // Any user interaction - unlock audio context
             //if not playing music, start intro music
-            if(!this.gameModel.music.intro.isPlaying()) {
-                this.gameModel.playIntroMusic();
-            }
 
             if (keyCode === 32) { // Spacebar
                 this.gameModel.startGame();

@@ -1,16 +1,8 @@
-// <![CDATA[
-var sparks=10; // how many sparks per clicksplosion
-var speed=33; // how fast - smaller is faster
-var bangs=5; // how many can be launched simultaneously (note that using too many can slow the script down)
-var colours=new Array('rgb(246, 85, 243)'); 
+var sparks=10;
+var speed=33;
+var bangs=5;
+var colours=new Array('#FE7BBF', '#EC2B7A','#FDDAF8');
 
-
-/****************************
-*   Clicksplosion Effect    *
-*(c)2012-3 mf2fm web-design *
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
 var intensity=new Array();
 var Xpos=new Array();
 var Ypos=new Array();
@@ -43,8 +35,7 @@ function clicksplode() { if (document.getElementById) {
   set_width();
   set_scroll();
   for (i=0; i<bangs; i++) for (j=sparks*i; j<sparks+sparks*i; j++) {
-    
-    stars[j]=createDiv('assets/True.webp', 20);
+    stars[j]=createDiv('assets/ui/Y2K SVGs/Asset 5.svg', 20);
     document.body.appendChild(stars[j]);
   }
 }}
@@ -57,13 +48,16 @@ function createDiv(filepath, size) {
   sty.position="absolute";
   sty.zIndex="1000";
   sty.visibility="hidden";
+  sty.width=size+"px";
+  sty.height=size+"px";
   
-  var elem = document.createElement("img");
-  elem.setAttribute("src", filepath);
-  elem.setAttribute("height", size);
-  elem.setAttribute("width", size);
-  elem.setAttribute("alt", "Sparkle");
-  div.appendChild(elem);
+  sty.webkitMaskImage = "url('" + filepath + "')";
+  sty.maskImage = "url('" + filepath + "')";
+  sty.webkitMaskSize = "contain";
+  sty.maskSize = "contain";
+  sty.webkitMaskRepeat = "no-repeat";
+  sty.maskRepeat = "no-repeat";
+  
   return (div);
 }
 
@@ -105,9 +99,9 @@ function eksplode(e) {
     dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
     decay[i]=16+Math.floor(Math.random()*16);
     Z=stars[i].style;
-    if (M<colours.length) Z.color=colours[i%2?count%colours.length:M];
-    else if (M<2*colours.length) Z.color=colours[count%colours.length];
-    else Z.color=colours[i%colours.length];
+    if (M<colours.length) Z.backgroundColor=colours[i%2?count%colours.length:M];
+    else if (M<2*colours.length) Z.backgroundColor=colours[count%colours.length];
+    else Z.backgroundColor=colours[i%colours.length];
     Z.fontSize='13px';
     Z.visibility='visible';
   }
@@ -156,4 +150,3 @@ function set_scroll() {
     sleft=0;
   }
 }
-// ]]>

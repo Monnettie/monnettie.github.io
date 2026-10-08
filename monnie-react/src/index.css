@@ -456,11 +456,12 @@ section .project-grid {
 
     color: var(--modalTextColor);
 
-    font-family: "Pixelta";
+    font-family: "Chivo";
 
     text-align: center;
 
     font-weight: normal;
+    
 }
 
 .project-modal-text h1,
@@ -473,17 +474,19 @@ section .project-grid {
     font-weight: normal;
 
     text-align: center;
+    
 }
 
 .project-modal-text h1 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.25rem;
 
-    font-family: "madoumfg";
+     font-family: "Pixelta";
 }
 
 .project-modal-text h2 {
     margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+     font-family: "Pixelta";
 }
 
 .project-modal-subtitle {
@@ -868,6 +871,10 @@ footer .star {
     .project-modal-text p {
         text-align: center;
     }
+
+  h3{
+     font-family: "Pixelta";
+  }  
 
     .resume-container {
         width: 95vw;

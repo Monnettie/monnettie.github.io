@@ -18,7 +18,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "Pixelta";
     src: url("assets/Pixelta.ttf") format("truetype");
@@ -27,7 +26,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "HoweverDemo";
     src: url("assets/HoweverDemo.ttf") format("truetype");
@@ -35,7 +33,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 
 * {
     box-sizing: border-box;
@@ -90,7 +87,6 @@ aside {
     gap: 12px;
     border-bottom: 2px solid rgba(255, 255, 255, .7);
     font-family: "HoweverDemo" !important;
-    
 }
 
 .topbar > img {
@@ -109,7 +105,6 @@ aside {
     padding: 14px 15px;
     min-width: 0;
     font-size: 1.3rem;
-
 }
 
 .nav-links::before,
@@ -178,7 +173,6 @@ aside {
     padding: 0;
     position: relative;
     transition: color .3s ease;
-    
     font-family: "Pixelta" !important;
 }
 
@@ -232,7 +226,7 @@ section img:hover {
         brightness(1.1);
 }
 
-#image:hover{
+#image:hover {
 
 }
 
@@ -247,8 +241,8 @@ section img:hover {
     align-items: center;
     justify-content: center;
     z-index: 999;
-    color:#F8A2BF;
-    background-color:  #fff5f8;
+    color: #F8A2BF;
+    background-color: #fff5f8;
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     border-radius: 5rem 5rem 0 0;
@@ -256,15 +250,15 @@ section img:hover {
     overflow-y: scroll !important;
 }
 
-.thing1 h1{
-        text-align:left;
-        color:#621f35;
-        margin-left: 1em;
+.thing1 h1 {
+    text-align: left;
+    color: #621f35;
+    margin-left: 1em;
 }
 
 .thing1 button {
     border: solid 1px #F8A2BF;
-    border-radius:3px;
+    border-radius: 3px;
     background: none;
     color: #F8A2BF;
     font-size: 1.5rem;
@@ -275,24 +269,23 @@ section img:hover {
     font-family: 'Pixelta';
     padding: .5em;
     margin-top: .5rem;
-
 }
 
-.thing1 a{  color: #621f35;
- text-decoration: #621f35 solid 1px;}
+.thing1 a {
+    color: #621f35;
+    text-decoration: #621f35 solid 1px;
+}
 
 .thing1 button:hover {
     color: #621f35;
     border: solid 1px #621f35;
     text-decoration: #621f35 solid 1px;
-
 }
 
 .thing1 button:active {
     color: #0c0004;
     border: solid 1px #0c0004;
     text-decoration: #0c0004 solid 1px;
-
 }
 
 .featured {
@@ -311,13 +304,13 @@ section img:hover {
 #image9.active,
 #image10.active,
 #image11.active,
-#image12.active ,
+#image12.active,
 #image13.active,
 #image14.active,
 #image15.active,
 #image16.active,
 #image17.active,
-#image18.active   {
+#image18.active {
     transform: translateY(0);
 }
 
@@ -364,13 +357,11 @@ footer .star {
         width: 150px;
     }
 
-    
-
     section {
         column-count: 3;
         column-gap: 12px;
         padding: 15px;
-        place-content: center
+        place-content: center;
     }
 
     section img {
@@ -379,8 +370,6 @@ footer .star {
 }
 
 @media only screen and (max-width: 700px) {
-
-
     .topbar {
         min-height: 70px;
         height: auto;
@@ -457,44 +446,85 @@ footer .star {
     }
 }
 
-.footy{
+.footy {
     text-align: center;
     font-family: 'madoumfg';
     font-size: .5em;
     color: #F8A2BF;
 }
 
-
-
-.about{
+.about {
     text-align: center;
     color: #F8A2BF;
-    p{
 
+    p {
         font-family: 'Pixelta';
         font-size: 1.5rem;
     }
 
-    h1{
+    h1 {
         font-family: 'madoumfg';
     }
 
     width: 80%;
     margin: auto;
     justify-content: center;
-    
-
 }
 
+#wrap {
+    width: 500px;
+    height: 700px;
+    margin: auto;
+}
 
- #wrap { width: 500px; height: 700px; margin: auto;}
-    #frame { width: 500px; height: 700px; border: none; }
-    #frame {
-        -ms-zoom: 0.80;
-        -moz-transform: scale(0.80);
-        -moz-transform-origin: 0 0;
-        -o-transform: scale(0.80);
-        -o-transform-origin: 0 0;
-        -webkit-transform: scale(0.80);
-        -webkit-transform-origin: 0 0;
+#frame {
+    width: 500px;
+    height: 700px;
+    border: none;
+}
+
+#frame {
+    -ms-zoom: 0.80;
+    -moz-transform: scale(0.80);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.80);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.80);
+    -webkit-transform-origin: 0 0;
+}
+
+.game-frame {
+    margin: 0 auto;
+}
+
+.game-frame.landscape {
+    width: min(1000px, 100%);
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.game-frame.portrait {
+    width: min(500px, 100%);
+    aspect-ratio: 9 / 16;
+    height: auto;
+}
+
+.game-frame.landscape iframe,
+.game-frame.portrait iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .game-frame.landscape {
+        width: 90vw;
+        aspect-ratio: 16 / 9;
     }
+
+    .game-frame.portrait {
+        width: min(75vw, 400px);
+        aspect-ratio: 9 / 16;
+    }
+}

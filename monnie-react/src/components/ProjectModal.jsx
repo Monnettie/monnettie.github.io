@@ -40,31 +40,23 @@ function ProjectModal({ project, onClose }) {
                             return (
                                 <video
                                     key={`${item.src}-${index}`}
-                                    width="640"
-                                    height="360"
                                     controls
                                 >
                                     <source
                                         src={item.src}
                                         type="video/mp4"
                                     />
-                                    Your browser does not support the video tag.
+                                    Your browser does not support the
+                                    video tag.
                                 </video>
                             );
                         }
 
                         if (item.type === "iframe") {
-                            const orientationClass =
-                                item.orientation === "portrait"
-                                    ? "portrait"
-                                    : item.orientation === "landscape"
-                                        ? "landscape"
-                                        : "";
-
                             return (
                                 <div
                                     id="wrap"
-                                    className={`${item.className || ""} ${orientationClass}`}
+                                    className={item.className || ""}
                                     key={`${item.src}-${index}`}
                                 >
                                     <iframe

@@ -43,8 +43,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 body {
@@ -55,38 +55,43 @@ body {
 }
 
 main {
-    display: grid !important;
-    grid-template-areas:
-        "menu"
-        "content"
-        "footer";
-    grid-template-rows: auto 1fr auto;
-    gap: 3px;
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
 aside {
-    grid-area: menu;
     width: 100%;
     margin: 0;
     padding: 0;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
+
+/* =========================
+   TOP NAVIGATION
+   ========================= */
 
 .topbar {
     width: 100%;
     min-height: 92px;
+
     background: #F8A2BF;
     color: #fff5f8;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 0 18px;
     gap: 12px;
+
     border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+
     font-family: "HoweverDemo" !important;
 }
 
@@ -100,21 +105,29 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 15px;
+
     flex: 1;
     position: relative;
+
     padding: 14px 15px;
+
     min-width: 0;
+
     font-size: 1.3rem;
 }
 
 .nav-links::before,
 .nav-links::after {
     content: "";
+
     position: absolute;
     left: 0;
+
     width: 100%;
     height: 1px;
+
     background-color: #fff5f8;
 }
 
@@ -128,10 +141,15 @@ aside {
 
 .nav-links a {
     color: #fff5f8;
+
     text-decoration: none;
+
     line-height: 1;
+
     letter-spacing: -2px;
+
     white-space: nowrap;
+
     transition: color 0.25s ease;
 }
 
@@ -139,41 +157,65 @@ aside {
     color: #D7FB91;
 }
 
+/* =========================
+   CATEGORY NAVIGATION
+   ========================= */
+
 .categories {
-    height: 138px;
+    order: 1;
+
     width: 100%;
+    height: 138px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+
     gap: 25px;
+
+    flex-shrink: 0;
+
+    box-sizing: border-box;
 }
 
 .categories > img {
     width: 250px;
     height: auto;
+
     flex-shrink: 1;
 }
 
 .cats {
     position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
+
     padding: 0;
+
     flex-shrink: 0;
 }
 
 .cats button {
     border: none;
+
     background: none;
+
     color: #F8A2BF;
+
     font-size: 1.5rem;
+
     cursor: pointer;
+
     padding: 0;
+
     position: relative;
+
     transition: color 0.3s ease;
+
     font-family: "Pixelta" !important;
 }
 
@@ -187,39 +229,87 @@ aside {
 
 .category-underline {
     position: absolute;
+
     left: 0;
     bottom: -5px;
+
     width: 0;
     height: 1px;
+
     background-color: #F8A2BF;
+
     pointer-events: none;
+
     transition:
         left 0.35s cubic-bezier(.65, 0, .35, 1),
         width 0.35s cubic-bezier(.65, 0, .35, 1);
 }
 
-section {
-    grid-area: content;
+/* =========================
+   PAGE TRANSITION
+   ========================= */
+
+.page-transition {
+    animation: pageFadeIn 0.4s ease forwards;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   PROJECT GALLERY
+   ========================= */
+
+.project-grid {
+    order: 2;
+
     width: 100%;
     max-width: 1400px;
+
     margin: 0 auto;
     padding: 20px;
+
     column-count: 3;
     column-gap: 15px;
 }
 
-section img {
+.project-wrapper {
+    width: 100%;
+
+    display: inline-block;
+
+    margin: 0 0 15px;
+
+    break-inside: avoid;
+}
+
+.project-wrapper img,
+.project {
     width: 100%;
     max-width: none;
+
     height: auto;
+
     display: block;
+
     cursor: pointer;
-    margin-bottom: 15px;
-    break-inside: avoid;
+
+    margin: 0;
+
     transition: filter 0.35s ease;
 }
 
-section img:hover {
+.project-wrapper img:hover,
+.project:hover {
     filter:
         sepia(1)
         saturate(1.5)
@@ -227,12 +317,38 @@ section img:hover {
         brightness(1.1);
 }
 
+section {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 20px;
+
+    order: 2;
+}
+
+section .project-grid {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   PROJECT MODAL
+   ========================= */
+
 .thing1 {
     position: fixed;
+
     inset: 0;
+
     width: 100vw;
     height: 100vh;
+
     padding: 40px;
+
     z-index: 9999;
 
     background-color: rgba(255, 245, 248, 0.85);
@@ -249,12 +365,15 @@ section img:hover {
 
     overflow-y: auto;
     overflow-x: hidden;
+
     text-align: center;
 }
 
 .thing1.active {
     opacity: 1;
+
     visibility: visible;
+
     pointer-events: auto;
 
     transition:
@@ -264,44 +383,64 @@ section img:hover {
 
 .project-modal {
     width: min(1200px, 100%);
-    min-height: 100%;
+
+    min-height: calc(100vh - 80px);
 
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-    text-align: center !important;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(300px, 0.75fr);
+
     align-items: center;
 
+    justify-content: center;
+
     gap: 60px;
-     margin: auto;
+
+    text-align: center;
 }
 
 .project-modal-media {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
     gap: 25px;
+
     text-align: center;
 }
 
 .project-modal-media img {
     display: block;
+
     width: auto;
-    max-width: 60%;
+
+    max-width: 100%;
+
+    max-height: 70vh;
+
     height: auto;
+
     margin: 0 auto;
 }
 
 .project-modal-media video {
     display: block;
-    width: 640px;
+
+    width: min(640px, 100%);
+
     max-width: 100%;
+
     height: auto;
+
     margin: 0 auto;
 }
 
@@ -309,83 +448,104 @@ section img:hover {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
-    color: #5E414B;
+    color: var(--modalTextColor);
+
     font-family: "Pixelta";
+
     text-align: center;
-    font-weight:normal;
+
+    font-weight: normal;
 }
 
 .project-modal-text h1,
 .project-modal-text h2,
+.project-modal-text h3,
 .project-modal-text p,
 .project-modal-text a {
-    color: #5E414B;
-    font-weight:normal;
+    color: var(--modalTextColor);
+
+    font-weight: normal;
+
     text-align: center;
-    margin-bottom: .25em;
-     margin-top: .25em;
-}
-
-.project-modal-text button{
-  color:#fff5f8;
-  background-color:#5E414B;
-  margin-left: auto;
-    margin-right: auto;
-
-    font-size: 1.25px;
 }
 
 .project-modal-text h1 {
-    text-align: center;
-    margin:0
+    margin: 0 0 0.5rem;
+
+    font-family: "madoumfg";
 }
 
-.project-modal-text h3 {
-    text-align: center;
-    margin: 0;
+.project-modal-text h2 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-modal-subtitle {
+    color: var(--modalTextColor);
+
+    font-family: "Pixelta";
+
+    font-size: 1.2rem;
+
     font-weight: normal;
-    font-family: 'Pixelta'
+
+    text-align: center;
+
+    margin: 0 0 1rem;
 }
 
 .project-modal-text p {
     max-width: 700px;
+
     line-height: 1.5;
+
     text-align: center;
+
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .project-modal-text a {
-    color: #5E414B;
-    text-decoration: #fff5f8 solid 1px;
+    color: var(--modalTextColor);
 
-     color:#fff5f8;
+    text-decoration: none;
+}
+
+.project-modal-text a:hover {
+    text-decoration: underline;
 }
 
 .project-modal-text button {
-    border: solid 1px #fff5f8;
+    border: solid 1px var(--modalTextColor);
+
     border-radius: 30px;
 
-    background: transparent;
+    background: var(--modalTextColor);
+
     color: #fff5f8;
-    background-color: #5E414B;
 
     font-size: 1.25rem;
+
     font-family: "Pixelta";
 
     cursor: pointer;
 
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    padding-top: .25em;
-    padding-bottom: .25em;
+    padding:
+        0.25em
+        1.25em;
+
     margin-top: 0.5rem;
+
     margin-left: auto;
     margin-right: auto;
-    font-weight: lighter;
 
+    font-weight: normal;
 
     transition:
         color 0.3s ease,
@@ -394,24 +554,23 @@ section img:hover {
 }
 
 .project-modal-text button:hover {
-    color: #5E414B;
-    background-color: #fff5f8;
-    border-color: #5E414B;
-}
+    color: var(--modalTextColor);
 
-.project-modal-text button {
-    color: #3f2b32;
     background-color: #fff5f8;
-    border-color: #3f2b32;
+
+    border-color: var(--modalTextColor);
 }
 
 .project-modal-close {
     margin-top: 2rem !important;
 }
 
+/* =========================
+   MEDIA
+   ========================= */
+
 .featured {
-     max-width: 100%;
-    height: 500px;
+    max-width: 100%;
 }
 
 .responsive {
@@ -419,16 +578,28 @@ section img:hover {
     height: auto;
 }
 
+/* =========================
+   IFRAME / GAMES
+   ========================= */
+
 #wrap {
     width: 500px;
     height: 700px;
+
     margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 #frame {
     width: 500px;
     height: 700px;
+
     border: none;
+
     display: block;
 }
 
@@ -438,33 +609,134 @@ section img:hover {
 
 .game-frame.landscape {
     width: min(1000px, 85vw);
+
     aspect-ratio: 16 / 9;
 }
 
 .game-frame.portrait {
     width: min(500px, 75vw);
+
     aspect-ratio: 9 / 16;
 }
 
 .game-frame iframe {
     display: block;
+
     width: 100%;
     height: 100%;
+
     border: none;
 }
 
-footer {
-    grid-area: footer;
+/* =========================
+   RESUME MODAL
+   ========================= */
+
+.resume-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 10000;
+
+    background-color: rgba(255, 245, 248, 0.85);
 
     display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    animation: resumeFadeIn 0.4s ease forwards;
+}
+
+.resume-container {
+    width: min(900px, 90vw);
+
+    height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.resume-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+.resume-close {
+    border: 1px solid #5E414B;
+
+    border-radius: 30px;
+
+    background-color: #5E414B;
+
+    color: #fff5f8;
+
+    font-family: "Pixelta";
+
+    font-size: 1.25rem;
+
+    padding: 0.25em 1.25em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.resume-close:hover {
+    color: #5E414B;
+
+    background-color: #fff5f8;
+}
+
+@keyframes resumeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    order: 3;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+
     align-items: center;
     justify-content: center;
 
     gap: 15px;
-    padding: 14px 15px;
 
-    width: 100%;
-    height: auto;
+    padding: 14px 15px;
 
     flex-wrap: nowrap;
 }
@@ -475,16 +747,25 @@ footer .star {
 
 .footy {
     text-align: center;
+
     font-family: "madoumfg";
+
     font-size: 0.5em;
+
     color: #F8A2BF;
 }
 
+/* =========================
+   ABOUT / HOME
+   ========================= */
+
 .about {
     width: 80%;
+
     margin: auto;
 
     text-align: center;
+
     color: #F8A2BF;
 
     justify-content: center;
@@ -492,6 +773,7 @@ footer .star {
 
 .about p {
     font-family: "Pixelta";
+
     font-size: 1.5rem;
 }
 
@@ -499,9 +781,15 @@ footer .star {
     font-family: "madoumfg";
 }
 
+/* =========================
+   TABLET
+   ========================= */
+
 @media only screen and (max-width: 1000px) {
+
     .topbar {
         gap: 8px;
+
         padding: 0 10px;
     }
 
@@ -515,6 +803,7 @@ footer .star {
 
     .nav-links a {
         font-size: 1.8rem;
+
         letter-spacing: -1px;
     }
 
@@ -526,15 +815,16 @@ footer .star {
         width: 150px;
     }
 
-    section {
+    .project-grid {
         column-count: 3;
+
         column-gap: 12px;
+
         padding: 15px;
-        place-content: center;
     }
 
-    section img {
-        margin-bottom: 12px;
+    section {
+        padding: 15px;
     }
 
     .project-modal {
@@ -542,16 +832,23 @@ footer .star {
     }
 }
 
+/* =========================
+   SMALL TABLET
+   ========================= */
+
 @media only screen and (max-width: 900px) {
+
     .thing1 {
         padding: 30px 20px;
     }
 
     .project-modal {
         grid-template-columns: 1fr;
+
         gap: 35px;
 
         min-height: auto;
+
         padding: 30px 0;
     }
 
@@ -561,34 +858,54 @@ footer .star {
 
     .project-modal-text {
         align-items: center;
+
         text-align: center;
     }
 
     .project-modal-text h1,
     .project-modal-text h2,
+    .project-modal-text h3,
     .project-modal-text p {
         text-align: center;
     }
+
+    .resume-container {
+        width: 95vw;
+        height: 85vh;
+    }
 }
 
+/* =========================
+   MOBILE
+   ========================= */
+
 @media only screen and (max-width: 700px) {
+
     .topbar {
         min-height: 70px;
+
         height: auto;
+
         padding: 8px;
+
         gap: 6px;
+
         flex-wrap: wrap;
     }
 
     .topbar > img {
         max-height: 20px;
+
         width: auto;
     }
 
     .nav-links {
         order: 2;
+
         flex-basis: 100%;
+
         gap: 12px;
+
         padding: 10px 0;
     }
 
@@ -598,19 +915,25 @@ footer .star {
 
     .categories {
         height: 70px;
+
         gap: 5px;
+
         overflow-x: auto;
+
         justify-content: flex-start;
+
         padding: 0 10px;
     }
 
     .categories > img {
         width: 80px;
+
         flex-shrink: 0;
     }
 
     .cats {
         gap: 8px;
+
         flex-shrink: 0;
     }
 
@@ -618,15 +941,29 @@ footer .star {
         font-size: 0.8rem;
     }
 
-    section {
+    .project-grid {
         width: 80%;
+
         padding: 10px;
+
         column-count: 2;
+
         column-gap: 10px;
+
+        margin: 0 auto;
     }
 
-    section img {
-        width: 60% !important;
+    section {
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    section .project-grid {
+        width: 80%;
+    }
+
+    .project-wrapper {
         margin-bottom: 10px;
     }
 
@@ -636,53 +973,82 @@ footer .star {
 
     .project-modal {
         gap: 20px;
+
         text-align: center;
+    }
+
+    .project-modal-media img {
+        max-width: 100%;
+
+        max-height: 60vh;
     }
 
     .project-modal-text h1 {
         font-size: 1.5rem;
+
         text-align: center;
     }
 
     .project-modal-subtitle {
-    color: #5E414B;
-    font-size: 1.2rem;
-    font-weight: lighter;
-    text-align: center;
-  }
+        color: #5E414B;
+
+        font-size: 1.2rem;
+
+        font-weight: normal;
+
+        text-align: center;
+    }
+
     .project-modal-text p {
         padding: 0 1rem;
     }
 
     .game-frame.landscape {
         width: 90vw;
+
         aspect-ratio: 16 / 9;
     }
 
     .game-frame.portrait {
         width: min(75vw, 400px);
+
         aspect-ratio: 9 / 16;
     }
 
     #wrap {
         width: 100%;
+
         max-width: 500px;
+
         height: 700px;
+
         overflow: hidden;
     }
 
     #frame {
         width: 500px;
+
         height: 700px;
+    }
+
+    .resume-modal {
+        padding: 15px;
+    }
+
+    .resume-container {
+        width: 100%;
+        height: 85vh;
     }
 
     footer {
         max-width: 60%;
+
         margin: auto;
     }
 
     footer img {
         max-width: 30%;
+
         height: auto;
     }
 }

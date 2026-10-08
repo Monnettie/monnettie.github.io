@@ -631,100 +631,35 @@ section .project-grid {
     border: none;
 }
 
-/* =========================
-   RESUME MODAL
-   ========================= */
+.resume{
+  width: 60% !important;
+  p, h1, h2, h3, h4{
+    font-family: "Chivo" !important;
+  }
+  p{
+    font-size: 1em !important;
+  }
 
-.resume-modal {
-    position: fixed;
+  a{
+    text-decoration: none !important;
+    color:#f83576 !important;
+    transition: all ease .2s !important;
+    font-style: normal !important;
+  }
 
-    inset: 0;
+  a:hover{
+    transition: all ease .2s !important;
+    color:#a6dc3a !important;
+  }
 
-    width: 100vw;
-    height: 100vh;
-
-    z-index: 10000;
-
-    background-color: rgba(255, 245, 248, 0.85);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 30px;
-
-    animation: resumeFadeIn 0.4s ease forwards;
+  .bold{
+    font-weight: bold;
+  }
 }
 
-.resume-container {
-    width: min(900px, 90vw);
-
-    height: 90vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 15px;
+.left{
+  text-align: left;
 }
-
-.resume-container iframe {
-    width: 100%;
-    height: 100%;
-
-    border: none;
-
-    background: white;
-
-    border-radius: 10px;
-}
-
-.resume-close {
-    border: 1px solid #5E414B;
-
-    border-radius: 30px;
-
-    background-color: #5E414B;
-
-    color: #fff5f8;
-
-    font-family: "Pixelta";
-
-    font-size: 1.25rem;
-
-    padding: 0.25em 1.25em;
-
-    cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        background-color 0.3s ease;
-}
-
-.resume-close:hover {
-    color: #5E414B;
-
-    background-color: #fff5f8;
-}
-
-@keyframes resumeFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
-   FOOTER
-   ========================= */
 
 footer {
     order: 3;

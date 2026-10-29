@@ -1,0 +1,31 @@
+    #wrap { width: 500px; height: 800px; padding: 0; overflow: hidden; }
+    #frame { width: 500px; height: 800px; border: none; }
+    #frame {
+        -ms-zoom: 0.80;
+        -moz-transform: scale(0.80);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.80);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.80);
+        -webkit-transform-origin: 0 0;
+    }
+
+    body{
+    background-color: #f0e9fb;
+    }
+
+    @media (max-width: 399px) {
+  /* Styles for screens smaller than 768px */
+    #wrap { width: 350px; height: 800px; padding: 0; overflow: hidden; }
+    #frame { width: 350px; height: 800px; border: none; }
+    
+    #frame {
+        -ms-zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.75);
+        -webkit-transform-origin: 0 0;
+    }
+}
